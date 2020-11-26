@@ -12,8 +12,6 @@ $(document).ready(
     var arrayNumeriUtente = [];
     // PUNTEGGIO
     var punteggio = 0;
-    // NUMERI RICORDATI
-    var numeriGiusti = [];
     // NUMERI NON RICORDATI
     var numeriSbagliati = [];
 
@@ -26,7 +24,7 @@ $(document).ready(
         arrayNumeriPc.push(randomNumberPc);
       }
     }
-    console.log("questi sono i numeri del pc" + arrayNumeriPc);
+    console.log("questi sono i numeri del pc  " + arrayNumeriPc);
     alert("Memorizza questi numeri: " + arrayNumeriPc);
 
 
@@ -43,8 +41,9 @@ $(document).ready(
           arrayNumeriUtente.push(numeroUtente);
         }
       }
+      console.log("questi sono i tuoi numeri " + arrayNumeriUtente);
     }
-    console.log("questi sono i tuoi numeri"arrayNumeriUtente);
+
 
 
     // CONTROLLO I NUMERI
