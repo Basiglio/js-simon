@@ -29,7 +29,7 @@ $(document).ready(
 
 
     // IMPOSTO TIMER
-    setTimeout(askNumber, 1000);
+    setTimeout(askNumber, 30000);
     function askNumber() {
       for (var i = 0; i < 5; i++) {
         numeroUtente = parseInt(prompt("Inserisci un numero"));
