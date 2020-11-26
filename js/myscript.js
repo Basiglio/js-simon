@@ -11,12 +11,11 @@ $(document).ready(
 
  	  while (arrayNumeriPc.length < 5) {
       // GENERO NUMERO CASUALE
-   	 	var randomNumber = randomNumber(1, 100);
-      arrayNumeriPc.push(randomNumber);
-      i++
+   	 	randomNumberPc = randomNumber(1, 100);
+      console.log(randomNumberPc);
+      arrayNumeriPc.push(randomNumberPc);
     }
-
-
+    console.log(arrayNumeriPc);
 
 
 
@@ -38,6 +37,6 @@ $(document).ready(
 function randomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  randomNumber = Math.floor(Math.random () * (max - min) +1);
-  return randomNumber;
+  number = Math.floor(Math.random () * (max - min) +1);
+  return number;
 }
