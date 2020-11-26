@@ -8,27 +8,28 @@ $(document).ready(
 
     // CREO UN CONTENITORE PER I NUMERI DEL PC
     var arrayNumeriPc = [];
+    // CREO UN CONTENITORE PER I NUMERI DELl'UTENTE
+    var arrayNumeriUtente = [];
 
  	  while (arrayNumeriPc.length < 5) {
       // GENERO NUMERO CASUALE
    	 	randomNumberPc = randomNumber(1, 100);
-      console.log(randomNumberPc);
       arrayNumeriPc.push(randomNumberPc);
     }
     console.log(arrayNumeriPc);
+    alert("Memorizza questi numeri: " + arrayNumeriPc);
 
 
+    console.log(arrayNumeriUtente);
 
-
-
-
-
-
-
-
-
-
-
+    setTimeout(askNumber, 3000);
+    function askNumber() {
+      while (arrayNumeriUtente.length < 5) {
+        // GENERO NUMERO CASUALE
+        numeroUtente = parseInt(prompt("Inserisci un numero"));
+        arrayNumeriUtente.push(numeroUtente);
+      }
+    }
   }
 );
 // MY FUNCTION----------------------------------------------
