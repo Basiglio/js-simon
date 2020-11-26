@@ -12,54 +12,42 @@ $(document).ready(
     var arrayNumeriUtente = [];
     // PUNTEGGIO
     var punteggio = 0;
-    // NUMERI NON RICORDATI
-    var numeriSbagliati = [];
+
+    var arrayNumeriSbagliati = [];
 
 
  	  while (arrayNumeriPc.length < 5) {
       // GENERO NUMERO CASUALE
-   	 	var randomNumberPc = randomNumber(1, 100);
-      var check = isInArray(arrayNumeriPc, randomNumberPc)
+   	 	randomNumberPc = randomNumber(1, 100);
+      check = isInArray(arrayNumeriPc, randomNumberPc)
       if (check == false) {
         arrayNumeriPc.push(randomNumberPc);
       }
     }
-    console.log("questi sono i numeri del pc  " + arrayNumeriPc);
+    console.log("questi sono i numeri del pc " + arrayNumeriPc);
     alert("Memorizza questi numeri: " + arrayNumeriPc);
 
 
     // IMPOSTO TIMER
     setTimeout(askNumber, 1000);
     function askNumber() {
-      while (arrayNumeriUtente.length < 5) {
-        // GENERO NUMERO CASUALE
-        var numeroUtente = parseInt(prompt("Inserisci un numero"));
-        var check = isInArray(arrayNumeriUtente, numeroUtente)
-        if (check == true) {
-          alert("non puoi inserire lo stesso numero 2 volte")
-        } else {
+      for (var i = 0; i < 5; i++) {
+        numeroUtente = parseInt(prompt("Inserisci un numero"));
+        // CONTROLLO I NUMERI
+        var gameCheck = isInArray(arrayNumeriPc, numeroUtente);
+        // SE IL NUMERO è NELL'ARRAY DEL PC
+        if (gameCheck == true) {
+          // PUSHA IL NUMERO NEL CONTENITORE NUMERI MEMORIZZATI ED AUMENTA IL PUNTEGGIO.
           arrayNumeriUtente.push(numeroUtente);
+          punteggio++
+        } else {
+          arrayNumeriSbagliati.push(numeroUtente);
         }
       }
-      console.log("questi sono i tuoi numeri " + arrayNumeriUtente);
+      console.log("Questi sono i tuoi numeri giusti " + arrayNumeriUtente);
+      console.log("Questi sono i numeri sbagliati " + arrayNumeriSbagliati);
+      console.log("questo è il tuo punteggio " + punteggio);
     }
-
-
-
-    // CONTROLLO I NUMERI
-  //   var gameCheck = isInArray(arrayNumeriPc, numeroUtente);
-  //   // SE IL NUMERO è NELL'ARRAY DEL PC
-  //   if (gameCheck == true) {
-  //     // PUSHA IL NUMERO NEL CONTENITORE NUMERI MEMORIZZATI ED AUMENTA IL PUNTEGGIO.
-  //     numeriGiusti.push(numeroUtente);
-  //     punteggio++;
-  //   } else {
-  //     // ALTRIMENTI PUSHA IL NUMERO NEL CONTENITORE SBAGLIATI
-  //     numeriSbagliati.push(numeroUtente)
-  //   }
-  //   console.log("i numeri che hai indovinato sono i seguenti " + numeriGiusti);
-  //   console.log("i numeri che hai dimenticato sono questi " + numeriSbagliati);
-  //   console.log("il tuo punteggio è " + punteggio);
   }
 );
 // MY FUNCTION----------------------------------------------
