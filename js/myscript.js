@@ -47,19 +47,19 @@ $(document).ready(
 
 
     // CONTROLLO I NUMERI
-    var gameCheck = isInArray(arrayNumeriPc, numeroUtente);
-    // SE IL NUMERO è NELL'ARRAY DEL PC
-    if (gameCheck == true) {
-      // PUSHA IL NUMERO NEL CONTENITORE NUMERI MEMORIZZATI ED AUMENTA IL PUNTEGGIO.
-      numeriGiusti.push(numeroUtente);
-      punteggio++;
-    } else {
-      // ALTRIMENTI PUSHA IL NUMERO NEL CONTENITORE SBAGLIATI
-      numeriSbagliati.push(numeroUtente)
-    }
-    console.log("i numeri che hai indovinato sono i seguenti " + numeriGiusti);
-    console.log("i numeri che hai dimenticato sono questi " + numeriSbagliati);
-    console.log("il tuo punteggio è " + punteggio);
+  //   var gameCheck = isInArray(arrayNumeriPc, numeroUtente);
+  //   // SE IL NUMERO è NELL'ARRAY DEL PC
+  //   if (gameCheck == true) {
+  //     // PUSHA IL NUMERO NEL CONTENITORE NUMERI MEMORIZZATI ED AUMENTA IL PUNTEGGIO.
+  //     numeriGiusti.push(numeroUtente);
+  //     punteggio++;
+  //   } else {
+  //     // ALTRIMENTI PUSHA IL NUMERO NEL CONTENITORE SBAGLIATI
+  //     numeriSbagliati.push(numeroUtente)
+  //   }
+  //   console.log("i numeri che hai indovinato sono i seguenti " + numeriGiusti);
+  //   console.log("i numeri che hai dimenticato sono questi " + numeriSbagliati);
+  //   console.log("il tuo punteggio è " + punteggio);
   }
 );
 // MY FUNCTION----------------------------------------------
