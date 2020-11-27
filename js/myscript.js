@@ -12,34 +12,41 @@ $(document).ready(
     var arrayNumeriUtente = [];
     // PUNTEGGIO
     var punteggio = 0;
-
+    // CREO UN CONTENITORE PER I NUMERI SBAGLIATI
     var arrayNumeriSbagliati = [];
 
 
+    // CREO UN CICLO PER RIEMPIRE IL CONTENITORE NUMERI DEL PC
+    // FINO A QUANDO ARRAYNUMERIPC NON HA 5 CONTENUTI
  	  while (arrayNumeriPc.length < 5) {
-      // GENERO NUMERO CASUALE
+      // GENERO UN NUMERO CASUALE
    	 	randomNumberPc = randomNumber(1, 100);
+      // DOPO AVER GENERATO IL NUMERO SCORRI L'ARRAY NUMERIUTENTEPC
       check = isInArray(arrayNumeriPc, randomNumberPc)
+      // SE FOSSE GIA PRESENTE UN NUMERO UGUALE SCARTALO (TRUE)
       if (check == false) {
+        // SE NON FOSSE GIA PRESENTE PUSHALO NELL'ARRAYNUMERIPC
         arrayNumeriPc.push(randomNumberPc);
       }
     }
     console.log("questi sono i numeri del pc " + arrayNumeriPc);
+    // GENERO ALERT CON I NUMERI DEL PC
     alert("Memorizza questi numeri: " + arrayNumeriPc);
 
 
     // IMPOSTO TIMER
     setTimeout(askNumber, 30000);
     function askNumber() {
+      // CREO UN CICLO FOR
       for (var i = 0; i < 5; i++) {
+        // CHIEDO ALL'UTENTE DI INSERIRE I NUMERI
         numeroUtente = parseInt(prompt("Inserisci un numero"));
         // CONTROLLO I NUMERI
         var gameCheck = isInArray(arrayNumeriPc, numeroUtente);
         // SE IL NUMERO è NELL'ARRAY DEL PC
         if (gameCheck == true) {
-          // PUSHA IL NUMERO NEL CONTENITORE NUMERI MEMORIZZATI ED AUMENTA IL PUNTEGGIO.
           arrayNumeriUtente.push(numeroUtente);
-          punteggio++
+          punteggio++;
         } else {
           arrayNumeriSbagliati.push(numeroUtente);
         }
